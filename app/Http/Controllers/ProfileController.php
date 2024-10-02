@@ -2,17 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Routing\Controller as BaseController;
 
-class ProfileController extends Controller
+class Controller extends BaseController
 {
-    public function profile($nama = "", $kelas = "", $npm = "")
-    {
-        $data = [
-            'nama' => $nama,
-            'kelas' => $kelas,
-            'npm' => $npm,
-        ];
-        return view('profile', $data);
-    }
+    use AuthorizesRequests, ValidatesRequests;
 }
