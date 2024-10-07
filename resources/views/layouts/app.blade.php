@@ -13,15 +13,14 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
+            background: linear-gradient(to bottom right, #800080, #800080);
         }
         form {
-            background: ;
+            background: purple;
             padding: 20px;
             border-radius: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
-            
         }
         .form-group {
             margin-bottom: 15px;
@@ -51,29 +50,40 @@
         h2 {
             text-align: center; /* Center align the title */
         }
+
+        /* CSS untuk tabel */
+        table {
+            width: 80%;
+            border-collapse: collapse; /* Menggabungkan border tabel dan cell */
+            margin: 20px auto; /* Pusatkan tabel */
+            background-color: #fff; /* Warna latar belakang tabel */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan di sekitar tabel */
+        }
+
+        th, td {
+            padding: 10px; /* Ruang di dalam sel */
+            text-align: left; /* Perataan teks di kiri */
+            border-bottom: 1px solid #ddd; /* Garis bawah setiap baris */
+        }
+
+        th {
+            background-color: #d12260; /* Ubah menjadi warna biru */
+            color: white;
+        }
+
+
+        tr:hover {
+            background-color: #f5f5f5; /* Efek hover untuk baris tabel */
+        }
+
+        td {
+            color: #333; /* Warna teks */
+        }
     </style>
 </head>
 <body>
+    @yield('content')
 
-@extends('layouts.app')
-
-@section('content')
-<div>
-    <form action="{{ route('user.store') }}" method="POST">
-        @csrf
-        <label for="nama">Nama:</label>
-        <input type="text" id="nama" name="nama"><br>
- 
-        <label for="npm">NPM : </label>
-        <input type="text" id="npm" name="npm"><br>
-        
-        <label for="kelas">Kelas :</label>
-        <select name="kelas_id" id="kelas_id">
-            @foreach ($kelas as $kelasItem)
-            <option value="{{ $kelasItem->id }}">{{ $kelasItem->nama_kelas }}</option>
-            @endforeach
-        </select>
-        <button type="submit">Submit</button>
-    </form>
-</div>
-@endsection
+    <script src="..."></script>
+</body>
+</html>

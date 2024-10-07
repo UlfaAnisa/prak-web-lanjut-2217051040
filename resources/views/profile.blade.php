@@ -1,71 +1,60 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profil</title>
+    <title>Tugas 5</title>
     <style>
-    body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        background: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
-    }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #800080;
+        }
 
-    .profile-container {
-        text-align: left;
-        background-color: white;
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        width: 250px;
-    }
+        .profile-container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-    .profile-picture {
-        margin-bottom: 20px;
-    }
+        .profile-container img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
 
-    .profile-picture img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        border: 4px solid #90caf9;
-        display: block;
-        margin: 0 auto;
-    }
-
-    .profile-info {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .info-item {
-        background-color: #90caf9;
-        color: #ffffff;
-        padding: 10px 15px;
-        border-radius: 5px;
-        font-weight: bold;
-        text-align: left;
-        margin: 5px 0; 
-    }
+        .profile-container .info {
+            background-color: #800080;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
     </style>
 </head>
+
 <body>
-    <div class="profile-container">
-        <div class="profile-picture">
-        <img src="/assets/img/fotoevi.jpg" alt="Profile Picture">
+<div class="profile-container">
+    <img src="https://tse3.mm.bing.net/th?id=OIP.7v1NRcDNndfz2GtLSef8cgHaHa&pid=Api&P=0&h=220" alt="Minions">
+    <div class="info">
+        <strong>Nama:</strong> {{ $nama }}
+    </div>
+    <div class="info">
+        <strong>Kelas:</strong> {{ $nama_kelas ?? 'Kelas tidak ditemukan' }}
+    </div>
+    <div class="info">
+        <strong>NPM:</strong> {{ $npm }}
+    </div>
 </div>
 
-        
-        <div class="profile-info">
-            <div class="info-item">Nama : <?= $nama ?></div>
-            <div class="info-item">Kelas : <?= $kelas ?></div>
-            <div class="info-item">NPM : <?= $npm ?></div>
-        </div>
-    </div>
 </body>
+
 </html>
