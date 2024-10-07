@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WLTugas2</title>
+    <title>Tugas 5</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,7 +14,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f4f4f4;
+            background-color: #800080;
         }
 
         .profile-container {
@@ -33,7 +33,7 @@
         }
 
         .profile-container .info {
-            background-color: #FFFF33;
+            background-color: #800080;
             margin: 10px 0;
             padding: 10px;
             border-radius: 5px;
@@ -46,11 +46,7 @@
     <img src="https://tse3.mm.bing.net/th?id=OIP.7v1NRcDNndfz2GtLSef8cgHaHa&pid=Api&P=0&h=220" alt="Minions">
     <div class="info">
         <strong>Nama:</strong> {{ $nama }}
-        @foreach($errors->get('nama') as $msg)
-            <p>class="text-danger">{{ $msg }}</p>
-        @endforeach
     </div>
-
     <div class="info">
         <strong>Kelas:</strong> {{ $nama_kelas ?? 'Kelas tidak ditemukan' }}
     </div>
