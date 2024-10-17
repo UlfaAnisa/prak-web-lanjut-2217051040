@@ -73,6 +73,7 @@
             <option value="{{ $kelasItem->id }}">{{ $kelasItem->nama_kelas }}</option>
             @endforeach
         </select>
+        
         <br><br>
         <label for="foto" class="form-label">Foto</label>
         <input class="form-control" type="file" id="foto" name="foto"><br><br>
