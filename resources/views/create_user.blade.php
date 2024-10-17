@@ -59,7 +59,7 @@
 
 @section('content')
 <div>
-    <form action="{{ route('user.store') }}" method="POST">
+    <form action="{{ route('user/store') }}" method="POST">
         @csrf
         <label for="nama">Nama:</label>
         <input type="text" id="nama" name="nama"><br>
