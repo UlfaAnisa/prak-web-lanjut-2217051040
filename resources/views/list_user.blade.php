@@ -2,8 +2,11 @@
 
 @section ('content')
 
-<a href="{{ route('user.create') }}" class="btn 
-btn-primary mb-3">View</a>
+<div class="container">
+        <h1 class="text-center">List Data</h1>
+    <div class="mb-3 mt-2">
+        <a href="{{ route('user.create') }}" class="btn btn-add">Tambah Pengguna Baru</a>
+    </div>
 
 <table>
     <thead>
@@ -12,6 +15,7 @@ btn-primary mb-3">View</a>
             <th>Nama</th>
             <th>NPM</th>
             <th>Kelas</th>
+            <th>Foto</th>
             <th>Aksi</th>
 </tr>
 </thead>
@@ -24,8 +28,19 @@ btn-primary mb-3">View</a>
             <td><?= $user['nama'] ?></td>
             <td><?= $user['npm'] ?></td>
             <td><?= $user['nama_kelas'] ?></td>
-            <td><a href="{{ route('user.show', $user->id) }}" class="btn btn-warning mb-3">Detail</a></td>
-            <td></td>
+            <td style="padding: 10px;">
+            <img src="{{ asset('img/' . $user->foto) }}" alt="Foto User" width="100">
+
+                </td>
+            <td>
+                    <a href="{{ route('user.edit', $user['id']) }}" class="btn btn-edit btn-sm">Edit</a>
+                    <a href="{{ route('users.show', $user->id) }}" class="btn btn-detail btn-sm">Detail</a>
+                    <button class="btn btn-delete btn-sm" onclick="event.preventDefault(); if(confirm('Apakah Anda yakin ingin menghapus user ini?')) { document.getElementById('delete-form-{{ $user->id }}').submit(); }">Delete</button>
+                    <form id="delete-form-{{ $user->id }}" action="{{ route('user.destroy', $user['id']) }}" method="POST" style="display:none;">
+                        @csrf
+                        @method('DELETE')
+                    </form>
+            </td>
     </tr>
     <?php
     }
