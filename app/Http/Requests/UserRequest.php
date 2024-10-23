@@ -19,12 +19,14 @@ class UserRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules(): array
-    {
-        return [
-            'nama' => 'required',
-            'npm' => 'required',
-            'kelas' => 'required'
-        ];
-    }
+    public function rules()
+{
+    return [
+        'name' => 'required|string|max:255',
+        'kelas_id' => 'required|integer',
+        'foto' => 'nullable|image|max:2048',
+        'ipk' => 'nullable|numeric|min:0|max:4.00', // Validasi untuk IPK
+    ];
+}
+
 }

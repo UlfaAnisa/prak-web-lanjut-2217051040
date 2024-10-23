@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -53,27 +53,44 @@
         }
     </style>
 </head>
-<body>
+<body> -->
 
 @extends('layouts.app')
 
 @section('content')
 <div>
-    <form action="{{ route('user/store') }}" method="POST">
-        @csrf
-        <label for="nama">Nama:</label>
-        <input type="text" id="nama" name="nama"><br>
- 
-        <label for="npm">NPM : </label>
-        <input type="text" id="npm" name="npm"><br>
-        
-        <label for="kelas">Kelas :</label>
-        <select name="kelas_id" id="kelas_id">
-            @foreach ($kelas as $kelasItem)
-            <option value="{{ $kelasItem->id }}">{{ $kelasItem->nama_kelas }}</option>
-            @endforeach
-        </select>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="container ">
+        <h1 class="text-center">Input Data</h1>
+        <form action="{{ route('user/store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama"><br>
+
+            <label for="npm">NPM : </label>
+            <input type="text" id="npm" name="npm"><br>
+
+            <label for="kelas">Kelas :</label>
+            <select name="kelas_id" id="kelas_id">
+                @foreach ($kelas as $kelasItem)
+                <option value="{{ $kelasItem->id }}">{{ $kelasItem->nama_kelas }}</option>
+                @endforeach
+            </select>
+
+            <br><br>
+            
+            <!-- Input Field untuk IPK -->
+            <div class="form-group">
+                <label for="ipk">IPK</label>
+                <input type="number" step="0.01" max="4.00" name="ipk" class="form-control" id="ipk" 
+                       value="{{ old('ipk') ?? $user->ipk ?? '' }}" placeholder="Masukkan IPK">
+            </div>
+            
+            <br><br>
+            
+            <label for="foto" class="form-label">Foto</label>
+            <input class="form-control" type="file" id="foto" name="foto"><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </div>
 @endsection
